@@ -1122,7 +1122,7 @@ class Select extends React.Component {
 		let valueArray = this.getValueArray(this.props.value);
 		let options = this._visibleOptions = this.filterOptions(this.props.multi && this.props.removeSelected ? valueArray : null);
 		let isOpen = this.state.isOpen;
-		if (this.props.multi && !options.length && valueArray.length && !this.state.inputValue) isOpen = false;
+    if (this.props.multi && this.props.closeMultiMenuOnEmpty && !options.length && valueArray.length && !this.state.inputValue) isOpen = false;
 		const focusedOptionIndex = this.getFocusableOptionIndex(valueArray[0]);
 
 		let focusedOption = null;
@@ -1264,7 +1264,8 @@ Select.propTypes = {
 	valueComponent: PropTypes.func,       // value component to render
 	valueKey: PropTypes.string,           // path of the label value in option objects
 	valueRenderer: PropTypes.func,        // valueRenderer: function (option) {}
-	wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
+  wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
+  closeMultiMenuOnEmpty: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -1310,7 +1311,8 @@ Select.defaultProps = {
 	tabSelectsValue: true,
  	trimFilter: true,
 	valueComponent: Value,
-	valueKey: 'value',
+  valueKey: 'value',
+  closeMultiMenuOnEmpty: true,
 };
 
 export default Select;
