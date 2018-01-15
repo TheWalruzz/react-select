@@ -817,6 +817,10 @@ var Select$1 = function (_React$Component) {
 				var handler = this.state.isOpen ? this.props.onOpen : this.props.onClose;
 				handler && handler();
 			}
+
+			if (this.state.isOpen) {
+				this.focus();
+			}
 		}
 	}, {
 		key: 'componentWillUnmount',
