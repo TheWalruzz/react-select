@@ -1365,6 +1365,7 @@ var Select$1 = function (_React$Component) {
 			}
 
 			event.preventDefault();
+			event.stopPropagation();
 
 			this.setValue(this.getResetValue());
 			this.setState({
