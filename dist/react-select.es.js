@@ -1363,12 +1363,11 @@ var Select$1 = function (_React$Component) {
 			event.stopPropagation();
 
 			this.setValue(this.getResetValue());
+			this._focusAfterClear = true;
 			this.setState({
 				inputValue: this.handleInputValueChange(''),
 				isOpen: false
 			}, this.focus);
-
-			this._focusAfterClear = true;
 		}
 	}, {
 		key: 'getResetValue',

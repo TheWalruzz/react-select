@@ -682,13 +682,12 @@ class Select extends React.Component {
     event.preventDefault();
     event.stopPropagation();
 
-		this.setValue(this.getResetValue());
+    this.setValue(this.getResetValue());
+    this._focusAfterClear = true;
 		this.setState({
 			inputValue: this.handleInputValueChange(''),
 			isOpen: false,
 		}, this.focus);
-
-		this._focusAfterClear = true;
 	}
 
 	getResetValue () {
