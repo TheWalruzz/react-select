@@ -230,7 +230,7 @@ class Select extends React.Component {
 	}
 
 	focus () {
-    if (!this.input || this._focusAfterClear) return;
+		if (!this.input) return;
 		this.input.focus();
 	}
 
@@ -679,15 +679,15 @@ class Select extends React.Component {
 			return;
 		}
 
-    event.preventDefault();
-    event.stopPropagation();
+		event.preventDefault();
 
-    this.setValue(this.getResetValue());
-    this._focusAfterClear = true;
+		this.setValue(this.getResetValue());
 		this.setState({
 			inputValue: this.handleInputValueChange(''),
 			isOpen: false,
 		}, this.focus);
+
+		this._focusAfterClear = true;
 	}
 
 	getResetValue () {
