@@ -850,7 +850,7 @@ var Select$1 = function (_React$Component) {
 	}, {
 		key: 'focus',
 		value: function focus() {
-			if (!this.input) return;
+			if (!this.input || this._focusAfterClear) return;
 			this.input.focus();
 		}
 	}, {

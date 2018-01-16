@@ -230,7 +230,7 @@ class Select extends React.Component {
 	}
 
 	focus () {
-		if (!this.input) return;
+    if (!this.input || this._focusAfterClear) return;
 		this.input.focus();
 	}
 
